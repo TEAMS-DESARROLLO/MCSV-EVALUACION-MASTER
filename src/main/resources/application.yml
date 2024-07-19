@@ -1,0 +1,31 @@
+server:
+    port: 9003
+spring:
+#    security:
+#        oauth2:
+#            resourceserver:
+#                jwt:
+#                    issuer-uri: http://127.0.0.1:9000
+    datasource:
+        url: jdbc:postgresql://localhost:5432/mcsv_evaluacion_master
+        username: mcsv_evaluacion_master
+        password: evaluacion_master
+        driver-class-name: org.postgresql.Driver
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+        open-in-view: false
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+                naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+                "[format_sql]": true
+                "[generate_statistics]": true
+                "[order_inserts]": true
+                jdbc:
+                    "[batch_size]": 50
+springdoc:
+    swagger-ui:
+        tagsSorter=alpha
